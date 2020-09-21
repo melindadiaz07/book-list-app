@@ -1,0 +1,7 @@
+<h3><%= @reading_list.name %></h3>
+
+<ol>
+  <% @reading_list.books.each do |book| %>
+  <li><%= link_to "#{book.title}", book_path(book) %> By: <%= book.author %></li>
+  <% end %>
+</ol>

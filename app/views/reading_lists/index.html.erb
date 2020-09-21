@@ -1,0 +1,7 @@
+<h3>All Reading Lists</h3>
+
+<ul>
+  <% @reading_lists.each do |list| %>
+    <li><%= link_to list.name, reading_list_path(list) %></li>
+  <% end %>
+</ul>
