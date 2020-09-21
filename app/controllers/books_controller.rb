@@ -13,7 +13,10 @@ class BooksController < ApplicationController
     end
 
     def create
+        byebug
         @book = Book.create(book_params(:title, :author, :genre, :description))
+        @book.add_to_reading_list(params[:book][:reading_list_ids])
+        redirect_to book_path(@book)
     end
 
     private
