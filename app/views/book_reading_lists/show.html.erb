@@ -1,0 +1,9 @@
+<h3><%= @book.title %></h3>
+<h4>Reading Lists:</h4>
+
+<ul>
+    <% @book.reading_lists.each do |list| %>
+       <li><%= link_to list.name, reading_list_path(list) %></li>
+    <% end %>
+</ul>
+
