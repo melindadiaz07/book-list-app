@@ -1,0 +1,19 @@
+<h3><%= @book.title %></h3>
+
+<p><%= @book.author %></p>
+<div>
+  <%=form_for @book do |f| %>
+  <%= f.label "Genre" %><br>
+  <%= f.collection_select(:genre, Book.all, :genre, :genre) %><br><br>
+
+  <%= f.label "Description" %><br>
+  <%= f.text_area :description %><br><br>
+
+  <%= f.label "Add to Reading List" %><br>
+  <%= f.collection_select(:reading_list_ids, ReadingList.all, :id, :name, {}, {multiple: true}) %><br><br>
+
+  <%= f.submit "Update Book" %>
+  <% end %>
+</div>
+
+
