@@ -6,7 +6,7 @@
     <%= f.text_field :author %><br /><br>
 
     <%= f.label :genre %>:<br>
-    <%= f.collection_select(:id, Book.all, :id, :genre) %><br>
+    <%= f.collection_select(:genre, Book.all, :genre, :genre) %><br>
     <br />
 
     <%= f.label :description %>:<br>
@@ -18,6 +18,6 @@
 
 
     
-  
+
     <%= f.submit %>
   <% end %>
